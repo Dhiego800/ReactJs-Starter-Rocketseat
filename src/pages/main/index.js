@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import api from '../../services/api';
+import { Link } from 'react-router-dom';
 
 import './styles.css';
 
@@ -53,14 +54,14 @@ state = {
             <strong>{product.title}</strong>
             <p>{product.description}</p>
 
-            <a href="">Acessar</a>
+            <Link to={`/products/${product.id}`}>Acessar</Link>
           </article>
         ))}
         <div className="actions">
           <button disabled={page === 1} onClick={this.prevPage}>
             Anterior
           </button>
-          <button dissabled={page === productInfo.pages} onClick={this.nextPage}>
+          <button disabled={page === productInfo.pages} onClick={this.nextPage}>
             Próxima
           </button>
         </div>
